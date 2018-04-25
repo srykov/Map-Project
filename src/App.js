@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './Header.js'
 import logo from './logo.svg';
 import './App.css';
 
@@ -7,12 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <div class="container">
-            <header>
-              <div class="title">
-                <h1>Go West!</h1>
-                <span class="tag-line">Climbing Areas and Routes of the American West</span>
-              </div>
-            </header>
+            <Header/>
             <div class="filter-by">
               <span class="filter-by-label">Zoom to State:</span>
               <select>
@@ -50,6 +46,7 @@ class App extends Component {
             </section>
             <main>
               <div id="map"/>
+
             </main>
           </div>
       </div>
