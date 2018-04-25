@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header.js'
+import Map from './Map.js'
 import logo from './logo.svg';
 import './App.css';
 
@@ -41,12 +42,10 @@ class App extends Component {
                 <li><a href="#">Vedauwoo, Wyoming</a></li>
                 <li><a href="#">Grand Teton NP, Wyoming</a></li>
                 <li><a href="#">Devil's Tower, Wyoming</a></li>
-
               </ul>
             </section>
             <main>
-              <div id="map"/>
-
+              <Map/>
             </main>
           </div>
       </div>
