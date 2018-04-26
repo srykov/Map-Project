@@ -3,7 +3,6 @@ import Header from './Header.js';
 import FilterByState from './FilterByState';
 import ListAreas from './ListAreas';
 import Map from './Map.js';
-import logo from './logo.svg';
 import './App.css';
 import climbingAreas from './data/locations.json';
 
