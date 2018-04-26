@@ -3,8 +3,8 @@ import React from 'react'
 function FilterByState(props) {
 
   return (
-      <div class="filter-by">
-        <span class="filter-by-label">Zoom to State: </span>
+      <div className="filter-by">
+        <span className="filter-by-label">Zoom to State: </span>
         <select>
           <option value="*">All States</option>
           <option value="AZ">Arizona</option>
