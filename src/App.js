@@ -21,7 +21,7 @@ class App extends Component {
             <FilterByState climbingAreas={this.state.climbingAreas}/>
             <ListAreas climbingAreas={this.state.climbingAreas}/>
             <main>
-              <Map/>
+              <Map climbingAreas={this.state.climbingAreas}/>
             </main>
           </div>
       </div>
