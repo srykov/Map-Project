@@ -108,6 +108,7 @@ option:focus, option:active{
     background: #fff;
     color: #808080;
     font-size: 12px;
+    cursor:pointer;
 }
 
 .climbing-areas a{
