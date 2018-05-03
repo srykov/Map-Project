@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getStateNameByCode } from './util/Utils';
+import { getStateNameByCode } from '../util/Utils';
 
 class FilterByState extends Component {
 

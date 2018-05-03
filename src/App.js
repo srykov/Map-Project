@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Header from './Header.js';
-import FilterByState from './FilterByState';
-import ListAreas from './ListAreas';
-import Map from './Map.js';
+import Header from './components/Header.js';
+import FilterByState from './components/FilterByState';
+import ListAreas from './components/ListAreas';
+import Map from './components/Map.js';
 import './App.css';
 import climbingAreas from './data/locations.json';
 
