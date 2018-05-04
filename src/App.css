@@ -84,6 +84,7 @@ option:focus, option:active{
     color: #fff;
     padding: 10px;
     font-family: 'Lobster', serif;
+    cursor:pointer;
 }
 
 .list-ctrl .icon{

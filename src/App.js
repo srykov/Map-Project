@@ -39,11 +39,13 @@ class App extends Component {
   })
 
   selectLocation = ((location) => {
+
+    let center = location ? {lat: location.lat, lng: location.long}: this.defaultCenter
     let zoom = location ? this.locationViewZoom : this.wideViewZoom
 
     this.setState({
-      selectedLocationId: location.id,
-      center: {lat: location.lat, lng: location.long},
+      selectedLocationId: location? location.id : '',
+      center: center,
       zoom: zoom
     })
   })
