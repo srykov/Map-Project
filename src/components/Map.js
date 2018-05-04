@@ -26,7 +26,7 @@ class Map extends Component {
             <Marker
               visible={!selectedLocationId || location.id === selectedLocationId? true : false}
               key={location.id}
-              position={{ lat: location.lat, lng: location.long }}
+              position={{ lat: location.lat, lng: location.lng }}
               title={location.name}
               onClick={ () => onSelectLocation(location)}
             >
