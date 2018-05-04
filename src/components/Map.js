@@ -14,7 +14,7 @@ class Map extends Component {
 
   render() {
 
-   const {locations, selectedLocationId} = this.props
+   const {locations, selectedLocationId, onSelectLocation} = this.props
    const MapWithMarkers = withGoogleMap(props => (
       <GoogleMap
         defaultCenter = {this.props.center}
@@ -28,8 +28,9 @@ class Map extends Component {
               key={location.id}
               position={{ lat: location.lat, lng: location.long }}
               title={location.name}
+              onClick={ () => onSelectLocation(location)}
             >
-              {location.id === selectedLocationId && <InfoWindow>
+              {location.id === selectedLocationId && <InfoWindow onCloseClick= { () => onSelectLocation(null)}>
                 <LocationDetails location={location}/>
               </InfoWindow>}
 

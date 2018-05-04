@@ -16,7 +16,7 @@ class App extends Component {
     this.defaultCenter = {lat: 40.758701, lng: -111.876183}
     this.wideViewZoom = 5
     this.stateViewZoom = 6
-    this.locationViewZoom = 8
+    this.locationViewZoom = 10
 
     this.state = {
       selectedLocationId: '',
@@ -67,7 +67,7 @@ class App extends Component {
             <FilterByState onFilterByState={this.filterByState} locations={this.allLocations} filterValue={this.state.filterValue} selectedLocationId={selectedLocationId}/>
             <ListLocations onSelectLocation={this.selectLocation} locations={filteredLocations} filterValue={this.state.filterValue} selectedLocationId={selectedLocationId}/>
             <main>
-              <Map locations={filteredLocations} center={center} zoom={zoom} selectedLocationId={selectedLocationId}/>
+              <Map onSelectLocation={this.selectLocation} locations={filteredLocations} center={center} zoom={zoom} selectedLocationId={selectedLocationId}/>
             </main>
           </div>
       </div>
