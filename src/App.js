@@ -13,10 +13,10 @@ class App extends Component {
     super(props);
 
     this.allLocations = climbingAreas
-    //this.defaultCenter = {lat: 40.0501211, lng: -99.0373248}
-    this.defaultCenter = {lat: 38.9764568, lng: -107.7936348}
+    this.defaultCenter = {lat: 40.758701, lng: -111.876183}
     this.wideViewZoom = 5
     this.stateViewZoom = 6
+    this.locationViewZoom = 8
 
     this.state = {
       selectedLocationId: '',
@@ -39,11 +39,11 @@ class App extends Component {
   })
 
   selectLocation = ((location) => {
-    let zoom = location ? this.stateViewZoom : this.wideViewZoom
+    let zoom = location ? this.locationViewZoom : this.wideViewZoom
 
     this.setState({
       selectedLocationId: location.id,
-      center: getCenterOfState(location.state),
+      center: {lat: location.lat, lng: location.long},
       zoom: zoom
     })
   })
