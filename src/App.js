@@ -14,7 +14,7 @@ class App extends Component {
 
     this.allLocations = climbingAreas,
     this.defaultCenter = {lat: 43.646599, lng: -79.377614}
-    this.wideViewZoom = 11
+    this.wideViewZoom = 12
     this.stateViewZoom = 6
     this.locationViewZoom = 10
 

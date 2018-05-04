@@ -6,7 +6,7 @@ function Header(props) {
 	 <header>
       <div className="title">
         <h1>Toronto Guide</h1>
-        <span className="tag-line">What to see and do Toronto</span>
+        <span className="tag-line">Local advice for a fun weekend in Toronto</span>
       </div>
     </header>
     )
