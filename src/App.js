@@ -21,19 +21,29 @@ class App extends Component {
     }
   }
 
-  handleChangeSelectedLocationId(){
-
-  }
+  selectLocation = ((locationId) => {
+    this.setState({selectedLocationId: locationId})
+  })
 
   render() {
+    let filteredLocations = this.allLocations
+    let selectedLocationId = this.state.selectedLocationId
+
+    if(selectedLocationId){
+      let selectedLocation = this.allLocations.find ((location) => {
+        return location.id === selectedLocationId
+      })
+      filteredLocations = [selectedLocation]
+    }
+
     return (
       <div className="App">
         <div className="container">
             <Header/>
             <FilterByState locations={this.allLocations} filterValue={this.state.filterValue} selectedLocationId={this.state.selectedLocationId}/>
-            <ListLocations locations={this.allLocations} filterValue={this.state.filterValue} selectedLocationId={this.state.selectedLocationId}/>
+            <ListLocations onSelectLocation={this.selectLocation} locations={this.allLocations} filterValue={this.state.filterValue} selectedLocationId={this.state.selectedLocationId}/>
             <main>
-              <Map locations={this.allLocations} center={this.defaultCenter} zoom={this.defaultZoom} />
+              <Map locations={filteredLocations} center={this.defaultCenter} zoom={this.defaultZoom} />
             </main>
           </div>
       </div>

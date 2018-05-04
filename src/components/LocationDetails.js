@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getStateNameByCode, compareClimbingAreaByStateAndName } from '../util/Utils';
+import { getStateNameByCode } from '../util/Utils';
 
 class LocationDetails extends Component {
 

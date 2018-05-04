@@ -12,16 +12,16 @@ class ListLocations extends Component {
 
 	render(){
 
-		let locations = this.props.locations;
+		let {locations, onSelectLocation, selectedLocationId} = this.props;
 		locations.sort(compareClimbingAreaByStateAndName)
 		return (
 			<section className="list">
 		      <div className="list-title">
-		        Climbing Areas
+		        <span onClick={ () => onSelectLocation('')}>Climbing Areas</span>
 		      </div>
 		      <ul className="climbing-areas">
-		      	{ locations.map((area) => (
-		      		<li key={area.id}>{area.name}, {getStateNameByCode(area.state)}</li>
+		      	{ locations.map((location) => (
+		      		<li className={selectedLocationId === location.id ? 'selected' : ''} onClick={ () => onSelectLocation(location.id)} key={location.id}>{location.name}, {getStateNameByCode(location.state)}</li>
 		      	))}
 		      </ul>
 		    </section>
