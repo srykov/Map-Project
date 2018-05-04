@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 class ListLocations extends Component {
 
 	static propTypes = {
-		climbingAreas: PropTypes.array,
+		locations: PropTypes.array,
 		filterValue: PropTypes.string,
 		selectedLocationId: PropTypes.string
 	}
@@ -17,7 +17,7 @@ class ListLocations extends Component {
 		return (
 			<section className="list">
 		      <div className="list-title">
-		        <span onClick={ () => onSelectLocation(null)}>Climbing Areas</span>
+		        <span onClick={ () => onSelectLocation(null)}>Things to See & Do in Toronto</span>
 		      </div>
 		      <ul className="climbing-areas">
 		      	{ locations.map((location) => (

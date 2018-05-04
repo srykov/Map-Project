@@ -1,7 +1,23 @@
 import React, { Component } from 'react';
 import { getStateNameByCode } from '../util/Utils';
+import * as RoutesAPI from '../util/RoutesAPI'
+
+const maxResults=3
+const maxDistanceMiles=10
+const minDifficulty=5.6
+const maxDifficulty=5.8
 
 class LocationDetails extends Component {
+
+  state  = {
+    topRoutes: []
+  }
+
+  componentDidMount(){
+    RoutesAPI.getTopRoutesForLocation(this.props.location, minDifficulty, maxDifficulty, maxDistanceMiles, maxResults).then((topRoutes) => {
+      this.setState({topRoutes})
+    })
+  }
 
   render() {
 
