@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { getStateNameByCode, compareClimbingAreaByStateAndName } from '../util/Utils';
 
-class ClimbingAreaContent extends Component {
+class LocationDetails extends Component {
 
   render() {
 
-   const area = this.props.area
+   const location = this.props.location
 
    return(
       <div className="info-window">
-        <span className="area-title">{area.name}</span>|<span className="state">{getStateNameByCode(area.state)}</span>
+        <span className="area-title">{location.name}</span>|<span className="state">{getStateNameByCode(location.state)}</span>
         <div><img src="https://cdn-files.apstatic.com/climb/1202925_sqsmall_1494040765.jpg"/></div>
         <table className="top-routes">
           <tbody>
@@ -24,4 +24,4 @@ class ClimbingAreaContent extends Component {
 
 }
 
-export default ClimbingAreaContent
+export default LocationDetails

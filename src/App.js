@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header.js';
 import FilterByState from './components/FilterByState';
-import ListAreas from './components/ListAreas';
+import ListLocations from './components/ListLocations';
 import Map from './components/Map.js';
 import './App.css';
 import climbingAreas from './data/locations.json';
@@ -10,7 +10,19 @@ class App extends Component {
 
   constructor(props){
     super(props);
-    this.state = {climbingAreas};
+
+    this.allLocations = climbingAreas
+    this.defaultCenter = {lat: 40.0501211, lng: -99.0373248}
+    this.defaultZoom = 5
+
+    this.state = {
+      selectedLocationId: '',
+      filterValue: ''
+    }
+  }
+
+  handleChangeSelectedLocationId(){
+
   }
 
   render() {
@@ -18,10 +30,10 @@ class App extends Component {
       <div className="App">
         <div className="container">
             <Header/>
-            <FilterByState climbingAreas={this.state.climbingAreas}/>
-            <ListAreas climbingAreas={this.state.climbingAreas}/>
+            <FilterByState locations={this.allLocations} filterValue={this.state.filterValue} selectedLocationId={this.state.selectedLocationId}/>
+            <ListLocations locations={this.allLocations} filterValue={this.state.filterValue} selectedLocationId={this.state.selectedLocationId}/>
             <main>
-              <Map climbingAreas={this.state.climbingAreas} center={{lat: 40.0501211, lng: -99.0373248}} zoom={5} />
+              <Map locations={this.allLocations} center={this.defaultCenter} zoom={this.defaultZoom} />
             </main>
           </div>
       </div>

@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
-import ClimbingAreaContent from './ClimbingAreaContent';
+import LocationDetails from './LocationDetails';
+import PropTypes from 'prop-types';
 
 class Map extends Component {
 
+  static propTypes = {
+    locations: PropTypes.array,
+    center: PropTypes.object,
+    zoom: PropTypes.number
+  }
+
   render() {
 
-   const climbingAreas = this.props.climbingAreas
+   const locations = this.props.locations
    const MapWithMarkers = withGoogleMap(props => (
       <GoogleMap
         defaultCenter = {this.props.center}
@@ -14,15 +21,15 @@ class Map extends Component {
         ref={(ref) => {this.map = ref}}
       >
         {
-          climbingAreas.map(area => (
+          locations.map(location => (
             <Marker
-              key={area.id}
-              position={{ lat: area.lat, lng: area.long }}
-              title={area.name}
+              key={location.id}
+              position={{ lat: location.lat, lng: location.long }}
+              title={location.name}
             >
-              <InfoWindow>
-                <ClimbingAreaContent area={area}/>
-              </InfoWindow>
+              {props.isOpen && <InfoWindow>
+                <LocationDetails location={location}/>
+              </InfoWindow>}
 
 
             </Marker>)

@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import { getStateNameByCode } from '../util/Utils';
+import PropTypes from 'prop-types';
 
 class FilterByState extends Component {
 
+  static propTypes = {
+    locations: PropTypes.array,
+    filterValue: PropTypes.string,
+    selectedLocationId: PropTypes.string
+  }
+
   render(){
 
-    const climbingAreas = this.props.climbingAreas;
-    const allStates = climbingAreas.map((area) =>
-      area.state
+    const allStates = this.props.locations.map((location) =>
+      location.state
     )
     const uniqueStates = allStates.filter((state, index, allStates) =>
       allStates.indexOf(state) === index
