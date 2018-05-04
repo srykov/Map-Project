@@ -17,11 +17,11 @@ class ListLocations extends Component {
 		return (
 			<section className="list">
 		      <div className="list-title">
-		        <span onClick={ () => onSelectLocation('')}>Climbing Areas</span>
+		        <span onClick={ () => onSelectLocation(null)}>Climbing Areas</span>
 		      </div>
 		      <ul className="climbing-areas">
 		      	{ locations.map((location) => (
-		      		<li className={selectedLocationId === location.id ? 'selected' : ''} onClick={ () => onSelectLocation(location.id)} key={location.id}>{location.name}, {getStateNameByCode(location.state)}</li>
+		      		<li className={selectedLocationId === location.id ? 'selected' : ''} onClick={ () => onSelectLocation(location)} key={location.id}>{location.name}, {getStateNameByCode(location.state)}</li>
 		      	))}
 		      </ul>
 		    </section>

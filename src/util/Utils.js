@@ -8,13 +8,15 @@ export function getStateNameByCode(code) {
   return theState.name
 }
 
-export function getStateCodeForName(name) {
+export function getCenterOfState(code){
+  if(!code){
+    return null
+  }
 
-	let theState = states.find((state) =>
-		state.name === name
-	)
-
-	return theState.code
+  let theState = states.find(state =>
+    state.code === code
+  )
+  return theState.center
 }
 
 export function compareClimbingAreaByStateAndName(area1, area2){

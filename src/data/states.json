@@ -1,149 +1,38 @@
 [
-  { "code": "AL",
-  	"name": "Alabama"
-  },
-  { "code": "AK",
-  	"name": "Alaska"
-  },
   { "code": "AZ",
-  	"name": "Arizona"
-  },
-  { "code": "AR",
-  	"name": "Arkansas"
+  	"name": "Arizona",
+  	"center": {"lat": 33.729759, "lng":	-111.431221}
   },
   { "code": "CA",
-  	"name": "California"
+  	"name": "California",
+  	"center": {"lat": 36.116203, "lng":	-119.681564}
   },
   { "code": "CO",
-  	"name": "Colorado"
-  },
-  { "code": "CT",
-  	"name": "Connecticut"
-  },
-  { "code": "DE",
-  	"name": "Delaware"
-  },
-  { "code": "FL",
-  	"name": "Florida"
-  },
-  { "code": "GA",
-  	"name": "Georgia"
-  },
-  { "code": "HI",
-  	"name": "Hawaii"
+  	"name": "Colorado",
+  	"center": {"lat": 39.059811, "lng": -105.311104}
   },
   { "code": "ID",
-  	"name": "Idaho"
-  },
-  { "code": "IL",
-  	"name": "Illinois"
-  },
-  { "code": "IN",
-  	"name": "Indiana"
-  },
-  { "code": "IA",
-  	"name": "Iowa"
-  },
-  { "code": "KS",
-  	"name": "Kansas"
-  },
-  { "code": "KY",
-  	"name": "Kentucky"
-  },
-  { "code": "LA",
-  	"name": "Louisiana"
-  },
-  { "code": "ME",
-  	"name": "Maine"
-  },
-  { "code": "MD",
-  	"name": "Maryland"
-  },
-  { "code": "MA",
-  	"name": "Massachusetts"
-  },
-  { "code": "MI",
-  	"name": "Michigan"
-  },
-  { "code": "MN",
-  	"name": "Minnesota"
-  },
-  { "code": "MS",
-  	"name": "Mississippi"
-  },
-  { "code": "MO",
-  	"name": "Missouri"
-  },
-  { "code": "MT",
-  	"name": "Montana"
-  },
-  { "code": "NB",
-  	"name": "Nebraska"
+  	"name": "Idaho",
+  	"center": {"lat": 44.240459, "lng":	-114.478828}
   },
   { "code": "NV",
-  	"name": "Nevada"
-  },
-  { "code": "NH",
-  	"name": "New Hampshire"
-  },
-  { "code": "NJ",
-  	"name": "New Jersey"
-  },
-  { "code": "NM",
-  	"name": "New Mexico"
-  },
-  { "code": "NY",
-  	"name": "New York"
-  },
-  { "code": "NC",
-  	"name": "North Carolina"
-  },
-  { "code": "ND",
-  	"name": "North Dakota"
-  },
-  { "code": "OK",
-  	"name": "Oklahoma"
+  	"name": "Nevada",
+  	"center": {"lat": 38.313515, "lng":	-117.055374}
   },
   { "code": "OR",
-  	"name": "Oregon"
-  },
-  { "code": "PA",
-  	"name": "Pennsylvania"
-  },
-  { "code": "RI",
-  	"name": "Rhode Island"
-  },
-  { "code": "SC",
-  	"name": "South Carolina"
-  },
-  { "code": "SD",
-  	"name": "South Dakota"
-  },
-  { "code": "TN",
-  	"name": "Tennessee"
-  },
-  { "code": "TX",
-  	"name": "Texas"
+  	"name": "Oregon",
+  	"center": {"lat": 44.572021, "lng": -122.070938}
   },
   { "code": "UT",
-  	"name": "Utah"
-  },
-  { "code": "VT",
-  	"name": "Vermont"
-  },
-  { "code": "VA",
-  	"name": "Virginia"
+  	"name": "Utah",
+  	"center": {"lat": 40.150032, "lng": -111.862434}
   },
   { "code": "WA",
-  	"name": "Washington"
-  },
-  { "code": "WV",
-  	"name": "West Virginia"
-  },
-  { "code": "WI",
-  	"name": "Wisconsin"
+  	"name": "Washington",
+  	"center": {"lat": 47.400902, "lng":	-121.490494}
   },
   { "code": "WY",
-  	"name": "Wyoming"
+  	"name": "Wyoming",
+  	"center": {"lat": 42.755966, "lng":	-107.302490}
   }
 ]

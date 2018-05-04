@@ -8,12 +8,13 @@ class Map extends Component {
   static propTypes = {
     locations: PropTypes.array,
     center: PropTypes.object,
-    zoom: PropTypes.number
+    zoom: PropTypes.number,
+    selectedLocationId: PropTypes.string
   }
 
   render() {
 
-   const locations = this.props.locations
+   const {locations, selectedLocationId} = this.props
    const MapWithMarkers = withGoogleMap(props => (
       <GoogleMap
         defaultCenter = {this.props.center}
@@ -23,11 +24,12 @@ class Map extends Component {
         {
           locations.map(location => (
             <Marker
+              visible={!selectedLocationId || location.id === selectedLocationId? true : false}
               key={location.id}
               position={{ lat: location.lat, lng: location.long }}
               title={location.name}
             >
-              {props.isOpen && <InfoWindow>
+              {location.id === selectedLocationId && <InfoWindow>
                 <LocationDetails location={location}/>
               </InfoWindow>}
 

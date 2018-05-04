@@ -12,7 +12,9 @@ class FilterByState extends Component {
 
   render(){
 
-    const allStates = this.props.locations.map((location) =>
+    let {locations, onFilterByState} = this.props;
+
+    const allStates = locations.map((location) =>
       location.state
     )
     const uniqueStates = allStates.filter((state, index, allStates) =>
@@ -23,8 +25,8 @@ class FilterByState extends Component {
     return (
       <div className="filter-by">
         <span className="filter-by-label">Zoom to State: </span>
-        <select>
-          <option value='*'>All States</option>
+        <select onChange={ (event) => onFilterByState(event.target.value)}>
+          <option value=''>All States</option>
           {uniqueStates.map((state) =>
             <option key={state} value={state}>{getStateNameByCode(state)}</option>
           )}
