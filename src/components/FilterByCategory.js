@@ -11,15 +11,15 @@ class FilterByCategory extends Component {
 
   render(){
 
-  let {locations, onFilterByCategory} = this.props;
+    let {locations, onFilterByCategory} = this.props;
 
-  const allCategories = locations.map((location) =>
-    location.venue.categories[0]
-  )
+    const allCategories = locations.map((location) =>
+      location.venue.categories[0]
+    )
 
-  const uniqueCategories = allCategories.filter((category, index, allCategories) =>
-    allCategories.indexOf(category) === index
-  )
+    const uniqueCategories = allCategories.filter((object, position, array) => {
+      return array.map(category => category['id']).indexOf(object['id']) === position
+    });
 
     return (
       <div className="filter-by">

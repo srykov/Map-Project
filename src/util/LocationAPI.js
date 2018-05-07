@@ -6,12 +6,12 @@ const client_secret='P1LFYYR2HIBCLZDRFQA52HIHHM4SILROLR5WX2RC2BW0OLPH'
 const venuesEndpoint = 'https://api.foursquare.com/v2/venues/explore'
 const paramsForVenueRequest = {
 	ll: `${torontoLat},${torontoLng}`,
-	radius:'500',
+	radius:'2000',
 	section:'food',
 	client_id: client_id,
 	client_secret: client_secret,
 	v:'20180507',
-	limit:'8',
+	limit:'15',
 	openNow:true
 }
 

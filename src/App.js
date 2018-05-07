@@ -11,7 +11,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.defaultCenter = {lat: LocationAPI.torontoLat, lng: LocationAPI.torontoLng}
-    this.defaultZoom = 15
+    this.defaultZoom = 14
 
     this.state = {
       allLocations: [],
