@@ -5,8 +5,8 @@ function Header(props) {
   return (
 	 <header>
       <div className="title">
-        <h1>Toronto Guide</h1>
-        <span className="tag-line">Local advice for a fun weekend in Toronto</span>
+        <h1>Toronto Restaurant Guide</h1>
+        <span className="tag-line">Where to Eat in Toronto</span>
       </div>
     </header>
     )

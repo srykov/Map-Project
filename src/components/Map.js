@@ -24,13 +24,13 @@ class Map extends Component {
         {
           locations.map(location => (
             <Marker
-              visible={!selectedLocationId || location.id === selectedLocationId? true : false}
-              key={location.id}
-              position={{ lat: location.lat, lng: location.lng }}
-              title={location.name}
+              visible={!selectedLocationId || location.venue.id === selectedLocationId? true : false}
+              key={location.venue.id}
+              position={{ lat: location.venue.location.lat, lng: location.venue.location.lng }}
+              title={location.venue.name}
               onClick={ () => onSelectLocation(location)}
             >
-              {location.id === selectedLocationId && <InfoWindow onCloseClick= { () => onSelectLocation(null)}>
+              {location.venue.id === selectedLocationId && <InfoWindow onCloseClick= { () => onSelectLocation(null)}>
                 <LocationDetails location={location}/>
               </InfoWindow>}
 

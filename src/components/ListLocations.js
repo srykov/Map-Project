@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { getStateNameByCode, compareClimbingAreaByStateAndName } from '../util/Utils';
 import PropTypes from 'prop-types';
 
 class ListLocations extends Component {
@@ -13,15 +12,15 @@ class ListLocations extends Component {
 	render(){
 
 		let {locations, onSelectLocation, selectedLocationId} = this.props;
-		locations.sort(compareClimbingAreaByStateAndName)
+		locations.sort()
 		return (
 			<section className="list">
 		      <div className="list-title">
-		        <span onClick={ () => onSelectLocation(null)}>Things to See & Do in Toronto</span>
+		        <span onClick={ () => onSelectLocation(null)}>Food & Drink in Toronto</span>
 		      </div>
-		      <ul className="climbing-areas">
+		      <ul className="locations">
 		      	{ locations.map((location) => (
-		      		<li className={selectedLocationId === location.id ? 'selected' : ''} onClick={ () => onSelectLocation(location)} key={location.id}>{location.name}, {getStateNameByCode(location.state)}</li>
+		      		<li className={selectedLocationId === location.id ? 'selected' : ''} onClick={ () => onSelectLocation(location)} key={location.venue.id}>{location.venue.name}</li>
 		      	))}
 		      </ul>
 		    </section>

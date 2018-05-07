@@ -91,17 +91,17 @@ option:focus, option:active{
     padding: 10px;
 }
 
-.climbing-areas{
+.locations{
     list-style: none;
     padding-left: 0;
     margin: 0px;
 }
 
-.climbing-areas li:first-child {
+.locations li:first-child {
     border-top: 1px solid #808080;
 }
 
-.climbing-areas li{
+.locations li{
     padding: 5px 0 0 10px;
     border-bottom: 1px solid #808080;
     border-right: 1px solid #808080;
@@ -112,13 +112,13 @@ option:focus, option:active{
     cursor:pointer;
 }
 
-.climbing-areas .selected{
+.locations .selected{
     color: #ff6a00;
     font-weight: bold;
     cursor: default;
 }
 
-.climbing-areas li:hover{
+.locations li:hover{
     color: #ff6a00;
     cursor:pointer;
 }

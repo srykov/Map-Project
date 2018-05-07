@@ -1,61 +1,55 @@
 import React, { Component } from 'react';
 import Header from './components/Header.js';
-import { getCenterOfState } from './util/Utils';
-import FilterByState from './components/FilterByState';
+import FilterByCategory from './components/FilterByCategory';
 import ListLocations from './components/ListLocations';
 import Map from './components/Map.js';
 import './App.css';
-import climbingAreas from './data/locations.json';
+import * as LocationAPI from './util/LocationAPI';
 
 class App extends Component {
 
   constructor(props){
     super(props);
-
-    this.allLocations = climbingAreas,
-    this.defaultCenter = {lat: 43.646599, lng: -79.377614}
-    this.wideViewZoom = 12
-    this.stateViewZoom = 6
-    this.locationViewZoom = 10
+    this.defaultCenter = {lat: LocationAPI.torontoLat, lng: LocationAPI.torontoLng}
+    this.defaultZoom = 15
 
     this.state = {
+      allLocations: [],
       selectedLocationId: '',
-      filterValue: '',
-      zoom: this.wideViewZoom,
-      center: this.defaultCenter
+      filterValue: ''
     }
   }
 
-  filterByState = ((stateCode) => {
+  componentDidMount(){
+    LocationAPI.getLocations().then((locations) => {
+      console.log(locations)
+      this.setState({
+        allLocations:locations
+      })
+    })
+  }
 
-    let center = getCenterOfState(stateCode) ? getCenterOfState(stateCode) : this.defaultCenter
-    let zoom = stateCode ? this.stateViewZoom : this.wideViewZoom
+
+  filterByType = ((categoryId) => {
+
     this.setState({
-      filterValue: stateCode,
-      selectedLocationId: '',
-      zoom: zoom,
-      center: center
+      filterValue: categoryId,
+      selectedLocationId: ''
     })
   })
 
   selectLocation = ((location) => {
-
-    let center = location ? {lat: location.lat, lng: location.lng}: this.defaultCenter
-    let zoom = location ? this.locationViewZoom : this.wideViewZoom
-
     this.setState({
-      selectedLocationId: location? location.id : '',
-      center: center,
-      zoom: zoom
+      selectedLocationId: location? location.venue.id : ''
     })
   })
 
   render() {
-    let {selectedLocationId, filterValue, zoom, center} = this.state
+    let {selectedLocationId, filterValue} = this.state
 
-    let filteredLocations = this.allLocations
+    let filteredLocations = this.state.allLocations
     if(filterValue){
-      filteredLocations = this.allLocations.filter ((location) => {
+      filteredLocations = this.state.allLocations.filter ((location) => {
         return location.state === filterValue
       })
     }
@@ -64,10 +58,10 @@ class App extends Component {
       <div className="App">
         <div className="container">
             <Header/>
-            <FilterByState onFilterByState={this.filterByState} locations={this.allLocations} filterValue={this.state.filterValue} selectedLocationId={selectedLocationId}/>
+            <FilterByCategory onFilterByCategory={this.filterByType} locations={this.state.allLocations} filterValue={this.state.filterValue} selectedLocationId={selectedLocationId}/>
             <ListLocations onSelectLocation={this.selectLocation} locations={filteredLocations} filterValue={this.state.filterValue} selectedLocationId={selectedLocationId}/>
             <main>
-              <Map onSelectLocation={this.selectLocation} locations={filteredLocations} center={center} zoom={zoom} selectedLocationId={selectedLocationId}/>
+              <Map onSelectLocation={this.selectLocation} locations={filteredLocations} center={this.defaultCenter} zoom={this.defaultZoom} selectedLocationId={selectedLocationId}/>
             </main>
           </div>
       </div>
