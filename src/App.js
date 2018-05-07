@@ -50,7 +50,7 @@ class App extends Component {
     let filteredLocations = this.state.allLocations
     if(filterValue){
       filteredLocations = this.state.allLocations.filter ((location) => {
-        return location.state === filterValue
+        return location.venue.categories[0].id === filterValue
       })
     }
 
