@@ -16,7 +16,8 @@ class App extends Component {
     this.state = {
       allLocations: [],
       selectedLocationId: '',
-      filterValue: ''
+      filterValue: '',
+      center: this.defaultCenter
     }
   }
 
@@ -40,12 +41,13 @@ class App extends Component {
 
   selectLocation = ((location) => {
     this.setState({
-      selectedLocationId: location? location.venue.id : ''
+      selectedLocationId: location ? location.venue.id : '',
+      center: location? {lat: location.venue.location.lat, lng: location.venue.location.lng} : this.defaultCenter
     })
   })
 
   render() {
-    let {selectedLocationId, filterValue} = this.state
+    let {selectedLocationId, filterValue, center} = this.state
 
     let filteredLocations = this.state.allLocations
     if(filterValue){
@@ -61,7 +63,7 @@ class App extends Component {
             <FilterByCategory onFilterByCategory={this.filterByType} locations={this.state.allLocations} filterValue={this.state.filterValue} selectedLocationId={selectedLocationId}/>
             <ListLocations onSelectLocation={this.selectLocation} locations={filteredLocations} filterValue={this.state.filterValue} selectedLocationId={selectedLocationId}/>
             <main>
-              <Map onSelectLocation={this.selectLocation} locations={filteredLocations} center={this.defaultCenter} zoom={this.defaultZoom} selectedLocationId={selectedLocationId}/>
+              <Map onSelectLocation={this.selectLocation} locations={filteredLocations} center={center} zoom={this.defaultZoom} selectedLocationId={selectedLocationId}/>
             </main>
           </div>
       </div>
