@@ -4,7 +4,7 @@ function Footer(props) {
 
   return (
 	 <footer>
-		This site uses data from Foursquare.com.
+		<img src="Powered-by-Foursquare-one-color-300.png"/>
     </footer>
     )
 }

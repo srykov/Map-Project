@@ -34,7 +34,7 @@ class LocationDetails extends Component {
      return(
         <div className="info-window">
           <div className="location-info">
-            <div className="location-title">{item.name}</div>
+            <div className="location-title"><a href={item.canonicalUrl}>{item.name}</a></div>
             <div className="location-detail">{item.categories[0].name} | {item.location.address}</div>
             <div className="location-detail">{item.contact.formattedPhone != null && <span>{item.contact.formattedPhone} | </span>} <a href={item.url}>Website</a></div>
 
@@ -43,7 +43,7 @@ class LocationDetails extends Component {
               {item.contact.twitter && <a href={twitterUrl}><i className="fab fa-twitter-square fa-2x"></i></a>}
             </div>
           </div>
-          <div className="foursquare-attribution"><img src="Powered-by-Foursquare-one-color-300.png"/></div>
+          <img src="Powered-by-Foursquare-one-color-175.png"/>
         </div>
      )
    }

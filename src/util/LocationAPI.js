@@ -26,12 +26,6 @@ export const getLocations = () => {
 }
 
 
-
-//https://api.foursquare.com/v2/venues/VENUE_ID/photos
-//https://developer.foursquare.com/docs/api/venues/details
-
-
-
 const detailsEndpoint = 'https://api.foursquare.com/v2/venues/'
 const paramsForDetailsRequest = {
 	client_id: client_id,
