@@ -23,7 +23,7 @@ class LocationDetails extends Component {
     let item = this.state.item
     if(Object.keys(item).length === 0){
      return(
-        <div className="info-window">Loading...</div>
+        <div className="info-window">Unable to Get Location Details.</div>
      )
     }
     else{
