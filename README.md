@@ -30,4 +30,4 @@ You can try the MyReads app out by doing the following:
 
 ## Contributing
 
-This repository is the finished code for _my_ Neighborhood Map project. Therefore, I will  most likely will not accept pull requests.
+This repository is the finished code for _my_ Neighborhood Map project. Therefore, I will most likely will not accept pull requests.
