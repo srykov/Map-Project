@@ -134,53 +134,34 @@ main{
     height: 500px;
 }
 
-.info-window{
+.info-window {
     background: #fff;
-    height: 200px;
-    width: 300px;
+    height: 100px;
+    width: 150px;
     font-family: 'Roboto-Condensed', sans-serif;
     font-size: 12px;
-    padding: 10px;
+    padding: 5px;
 }
 
-.info-window .area-title{
+.info-window .location-info, .info-window .location-image {
+    width: 100%;
+}
+
+.info-window .location-title {
     color: #ff6a00;
     font-weight: bold;
-    font-size: 16px;
-    padding: 5px;
+    font-size: 14px;
+    padding-bottom: 2px;
 }
 
-.info-window .state{
+.info-window .location-detail {
+    padding: 2px 0 0px 0;
     color: #808080;
-    font-size: 16px;
-    font-weight: bold;
+}
+
+.info-window i {
     padding: 5px;
-}
-
-.info-window .top-routes{
-    padding-left: 10px;
-    list-style: none;
-    width: 100%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.info-window .top-routes tr:nth-child(odd){
-    background:#ff6a00;
-    color: #fff;
-}
-
-
-.info-window .route-name{
-    width: 50%;
-}
-
-.info-window a{
-    color: #37aac3;
-}
-
-.info-window img{
-    padding: 10px 0 10px 20px;
+    color: #808080;
 }
 
 /* Media queries */
@@ -215,4 +196,5 @@ main{
     main{
         width: 65%;
     }
+
 }
