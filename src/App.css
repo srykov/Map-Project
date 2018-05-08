@@ -136,11 +136,11 @@ main{
 
 .info-window {
     background: #fff;
-    height: 100px;
-    width: 150px;
     font-family: 'Roboto-Condensed', sans-serif;
     font-size: 12px;
     padding: 5px;
+    width: 200px;
+    height: 125px;
 }
 
 .info-window .location-info, .info-window .location-image {
@@ -162,6 +162,24 @@ main{
 .info-window i {
     padding: 5px;
     color: #808080;
+}
+
+.info-window .foursquare-attribution {
+    max-width: 100px;
+}
+
+.info-window img {
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    background: #fff;
+    color: #808080;
+    width: 100vw;
+    text-align: center;
+    padding: 5px 0 5px 0;
+    border-top: 2px solid #808080;
 }
 
 /* Media queries */

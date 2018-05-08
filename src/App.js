@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/Header.js';
+import Footer from './components/Footer.js';
 import FilterByCategory from './components/FilterByCategory';
 import ListLocations from './components/ListLocations';
 import Map from './components/Map.js';
@@ -65,6 +66,7 @@ class App extends Component {
             <main>
               <Map onSelectLocation={this.selectLocation} locations={filteredLocations} center={center} zoom={this.defaultZoom} selectedLocationId={selectedLocationId}/>
             </main>
+            <Footer/>
           </div>
       </div>
     );

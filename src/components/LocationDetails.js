@@ -23,7 +23,7 @@ class LocationDetails extends Component {
     let item = this.state.item
     if(Object.keys(item).length === 0){
      return(
-        <div className="info-window">Unable to Get Location Details.</div>
+        <div className="info-window">Loading Location Details...</div>
      )
     }
     else{
@@ -38,9 +38,12 @@ class LocationDetails extends Component {
             <div className="location-detail">{item.categories[0].name} | {item.location.address}</div>
             <div className="location-detail">{item.contact.formattedPhone != null && <span>{item.contact.formattedPhone} | </span>} <a href={item.url}>Website</a></div>
 
-            {item.contact.facebookUsername && <a href={facebookUrl}><i className="fab fa-facebook-square fa-2x"></i></a>}
-            {item.contact.twitter && <a href={twitterUrl}><i className="fab fa-twitter-square fa-2x"></i></a>}
+            <div className="location-detail">
+              {item.contact.facebookUsername && <a href={facebookUrl}><i className="fab fa-facebook-square fa-2x"></i></a>}
+              {item.contact.twitter && <a href={twitterUrl}><i className="fab fa-twitter-square fa-2x"></i></a>}
+            </div>
           </div>
+          <div className="foursquare-attribution"><img src="Powered-by-Foursquare-one-color-300.png"/></div>
         </div>
      )
    }
