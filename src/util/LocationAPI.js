@@ -22,6 +22,7 @@ export const getLocations = () => {
 	return fetch(venuesRequestUrl)
 	.then(response => response.json())
     .then(data => data.response.groups[0].items)
+    .catch(error => console.log(error))
 }
 
 
@@ -39,6 +40,7 @@ export const getLocationDetails = (venueId) => {
 	return fetch(detailsRequestUrl)
 	.then(response => response.json())
     .then(data => data.response.venue)
+    .catch(error => console.log(error))
 }
 
 

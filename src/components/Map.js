@@ -21,7 +21,7 @@ class Map extends Component {
         defaultZoom = {this.props.zoom}
         ref={(ref) => {this.map = ref}}
       >
-        {
+        { locations &&
           locations.map(location => (
             <Marker
               visible={!selectedLocationId || location.venue.id === selectedLocationId? true : false}

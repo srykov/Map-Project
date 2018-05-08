@@ -12,19 +12,29 @@ class ListLocations extends Component {
 	render(){
 
 		let {locations, onSelectLocation, selectedLocationId} = this.props;
-		locations.sort()
-		return (
-			<section className="list">
-		      <div className="list-title">
-		        <span onClick={ () => onSelectLocation(null)}>Food & Drink in Toronto</span>
-		      </div>
-		      <ul className="locations">
-		      	{ locations.map((location) => (
-		      		<li className={selectedLocationId === location.id ? 'selected' : ''} onClick={ () => onSelectLocation(location)} key={location.venue.id}>{location.venue.name}</li>
-		      	))}
-		      </ul>
-		    </section>
-		)
+
+		if(!locations || locations.length === 0){
+			return (
+				<section className="list">
+					<div className="list-title">
+				        <span>Unable to load restaurant recommendations.</span>
+				    </div>
+			    </section>)
+		} else{
+			locations.sort()
+			return (
+				<section className="list">
+			      <div className="list-title">
+			        <span onClick={ () => onSelectLocation(null)}>Restaurants</span>
+			      </div>
+			      <ul className="locations">
+			      	{ locations.map((location) => (
+			      		<li className={selectedLocationId === location.id ? 'selected' : ''} onClick={ () => onSelectLocation(location)} key={location.venue.id}>{location.venue.name}</li>
+			      	))}
+			      </ul>
+			    </section>
+			)
+		}
 	}
 }
 

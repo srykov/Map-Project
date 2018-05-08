@@ -24,7 +24,6 @@ class App extends Component {
 
   componentDidMount(){
     LocationAPI.getLocations().then((locations) => {
-      console.log(locations)
       this.setState({
         allLocations:locations
       })
@@ -33,7 +32,6 @@ class App extends Component {
 
 
   filterByType = ((categoryId) => {
-
     this.setState({
       filterValue: categoryId,
       selectedLocationId: ''

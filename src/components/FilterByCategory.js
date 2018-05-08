@@ -13,25 +13,35 @@ class FilterByCategory extends Component {
 
     let {locations, onFilterByCategory} = this.props;
 
-    const allCategories = locations.map((location) =>
-      location.venue.categories[0]
-    )
+    if(!locations || locations.length === 0){
+      return (
+        <div className="filter-by">
+        </div>
+      )
+    } else{
+      const allCategories = locations.map((location) =>
+        location.venue.categories[0]
+      )
 
-    const uniqueCategories = allCategories.filter((object, position, array) => {
-      return array.map(category => category['id']).indexOf(object['id']) === position
-    });
+      const uniqueCategories = allCategories.filter((object, position, array) => {
+        return array.map(category => category['id']).indexOf(object['id']) === position
+      });
+      return (
+        <div className="filter-by">
+          <span className="filter-by-label">Filter by Restaurant Type: </span>
+          <select onChange={ (event) => onFilterByCategory(event.target.value)}>
+            <option value=''>All Restaurant Categories</option>
+            {uniqueCategories.map((category) =>
+              <option key={category.id} value={category.id}>{category.shortName}</option>
+            )}
+          </select>
+        </div>
+      )
+    }
 
-    return (
-      <div className="filter-by">
-        <span className="filter-by-label">Filter by Restaurant Type: </span>
-        <select onChange={ (event) => onFilterByCategory(event.target.value)}>
-          <option value=''>All Restaurant Categories</option>
-          {uniqueCategories.map((category) =>
-            <option key={category.id} value={category.id}>{category.shortName}</option>
-          )}
-        </select>
-      </div>
-    )
+
+
+
   }
 }
 
