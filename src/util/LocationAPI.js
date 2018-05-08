@@ -16,7 +16,6 @@ const paramsForVenueRequest = {
 	openNow:true
 }
 
-
 export const getLocations = () => {
 	const venuesRequestUrl = `${venuesEndpoint}?${buildQueryString(paramsForVenueRequest)}`
 
