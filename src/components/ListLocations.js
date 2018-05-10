@@ -29,7 +29,7 @@ class ListLocations extends Component {
 			      </div>
 			      <ul className="locations">
 			      	{ locations.map((location) => (
-			      		<li className={selectedLocationId === location.id ? 'selected' : ''} onClick={ () => onSelectLocation(location)} key={location.venue.id}>{location.venue.name}</li>
+			      		<li className={selectedLocationId === location.id ? 'selected' : ''} key={location.venue.id}><a onClick={ () => onSelectLocation(location)}>{location.venue.name}</a></li>
 			      	))}
 			      </ul>
 			    </section>
