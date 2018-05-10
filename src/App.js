@@ -61,7 +61,7 @@ class App extends Component {
             <Header/>
             <FilterByCategory onFilterByCategory={this.filterByType} locations={this.state.allLocations} filterValue={this.state.filterValue} selectedLocationId={selectedLocationId}/>
             <ListLocations onSelectLocation={this.selectLocation} locations={filteredLocations} filterValue={this.state.filterValue} selectedLocationId={selectedLocationId}/>
-            <main>
+            <main role="main">
               <Map onSelectLocation={this.selectLocation} locations={filteredLocations} center={center} zoom={this.defaultZoom} selectedLocationId={selectedLocationId}/>
             </main>
             <Footer/>

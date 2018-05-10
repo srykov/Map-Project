@@ -44,7 +44,7 @@ class Map extends Component {
    return(
       <MapWithMarkers
         containerElement={ <div id="map-container"/> }
-        mapElement={ <div id="map"/> }
+        mapElement={ <div id="map" role="application"/> }
       />
    )
  }

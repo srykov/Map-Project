@@ -23,7 +23,7 @@ class ListLocations extends Component {
 		} else{
 			locations.sort()
 			return (
-				<section className="list">
+				<section className="list" role="menu">
 			      <div className="list-title">
 			        <span onClick={ () => onSelectLocation(null)}>Restaurants</span>
 			      </div>
