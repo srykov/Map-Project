@@ -17,7 +17,7 @@ class ListLocations extends Component {
 			return (
 				<section className="list">
 					<div className="list-title">
-				        <span>Unable to load restaurant recommendations.</span>
+				        <span>Loading restaurant recommendations...</span>
 				    </div>
 			    </section>)
 		} else{
