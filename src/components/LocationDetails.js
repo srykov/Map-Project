@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as LocationAPI from '../util/LocationAPI';
+import foursquare175 from '../img/foursquare175.png'
 
 class LocationDetails extends Component {
 
@@ -42,7 +43,7 @@ class LocationDetails extends Component {
               {item.contact.twitter && <a href={twitterUrl}><i className="fab fa-twitter-square fa-2x"></i></a>}
             </div>
           </div>
-          <img src="Powered-by-Foursquare-one-color-175.png" alt="Powered by Foursquare"/>
+          <img src={foursquare175} alt="Powered by Foursquare"/>
         </div>
      )
    }
