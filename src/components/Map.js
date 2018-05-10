@@ -24,6 +24,7 @@ class Map extends Component {
         { locations &&
           locations.map(location => (
             <Marker
+              animation={location.venue.id === selectedLocationId? window.google.maps.Animation.BOUNCE: null}
               visible={!selectedLocationId || location.venue.id === selectedLocationId? true : false}
               key={location.venue.id}
               position={{ lat: location.venue.location.lat, lng: location.venue.location.lng }}
