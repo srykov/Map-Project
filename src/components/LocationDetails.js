@@ -27,7 +27,6 @@ class LocationDetails extends Component {
      )
     }
     else{
-     console.log(item)
      const facebookUrl = `http://www.facebook.com/${item.contact.facebookUsername}`
      const twitterUrl = `http://www.twitter.com/${item.contact.twitter}`
 
