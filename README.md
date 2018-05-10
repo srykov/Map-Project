@@ -27,7 +27,8 @@ You can try the MyReads app out by doing the following:
 * Start the development server with `npm start`
 * Go to localhost:3000 in your browser
 
-## Testing the Service Worker Caching Functionality
+## Service Worker Caching Functionality
+I took advantage of the service worker caching functionality that is provided out-of-the box by create-react-app. To test this you should do the following:
 * Build the application (using `npm run build`).
 * Run a simple http server to serve the production build (e.g. serve -s build)
 
