@@ -14,7 +14,6 @@ Specifically I practiced:
 * using React lifecycle events and the Fetch API to fetch & render external data
 * using React's state management
 * working with the Google Maps API
-* using Service Workers to cache page content for offline use
 
 ## Foursquare Services
 I used [Foursquare's Venue Recommendation Service](https://developer.foursquare.com/docs/api/venues/explore) to ge the initial list of neighborhood locations. I passed in the latitude/longitude of a central location in Toronto, and received JSON data for a set of locations within a 2km radius of that location.
@@ -27,6 +26,10 @@ You can try the MyReads app out by doing the following:
 * Install all project dependencies with `npm install`
 * Start the development server with `npm start`
 * Go to localhost:3000 in your browser
+
+## Testing the Service Worker Caching Functionality
+* Build the application (using `npm run build`).
+* Run a simple http server to serve the production build (e.g. serve -s build)
 
 ## Contributing
 
