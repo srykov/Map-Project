@@ -43,7 +43,7 @@ class LocationDetails extends Component {
               {item.contact.twitter && <a href={twitterUrl}><i className="fab fa-twitter-square fa-2x"></i></a>}
             </div>
           </div>
-          <img src="Powered-by-Foursquare-one-color-175.png"/>
+          <img src="Powered-by-Foursquare-one-color-175.png" alt="Powered by Foursquare"/>
         </div>
      )
    }

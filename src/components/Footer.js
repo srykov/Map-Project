@@ -4,7 +4,7 @@ function Footer(props) {
 
   return (
 	 <footer>
-		<img src="Powered-by-Foursquare-one-color-300.png"/>
+		<img src="Powered-by-Foursquare-one-color-300.png" alt="Powered by Foursquare"/>
     </footer>
     )
 }
