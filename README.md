@@ -21,7 +21,7 @@ I used [Foursquare's Venue Recommendation Service](https://developer.foursquare.
 When users click on a given marker, or location in the list view, the application opens an Info Window, and I used data from [Foursquare's Venue Details Service](https://developer.foursquare.com/docs/api/venues/details) to show more detailed information about the location, such as address, phone number, twitter handle etc.
 
 ## Getting Started
-You can try the MyReads app out by doing the following:
+You can try the Neighborhood Map app out by doing the following:
 * Download the source code
 * Install all project dependencies with `npm install`
 * Start the development server with `npm start`
