@@ -71,7 +71,7 @@ class App extends Component {
               <FilterByCategory onFilterByCategory={this.filterByType} locations={this.state.allLocations} filterValue={this.state.filterValue} selectedLocationId={selectedLocationId}/>
               <ListLocations onSelectLocation={this.selectLocation} locations={filteredLocations} filterValue={this.state.filterValue} selectedLocationId={selectedLocationId}/>
               <main role="main">
-                {this.state.error && <span className="error">We are currently not able to load location data from Foursquare.</span>}
+                {this.state.error && <span className="error">We are currently unable to load location data from Foursquare.</span>}
                 <Map onSelectLocation={this.selectLocation} locations={filteredLocations} center={center} zoom={this.defaultZoom} selectedLocationId={selectedLocationId}/>
               </main>
               <Footer/>
