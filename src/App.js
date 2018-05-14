@@ -50,6 +50,8 @@ class App extends Component {
     })
   })
 
+
+  //only return locations whose category matches the selected filter value
   getFilteredLocations = ((filterValue) => {
     let filteredLocations = this.state.allLocations
     if(filterValue){
@@ -61,7 +63,6 @@ class App extends Component {
   })
 
   render() {
-
     let {selectedLocationId, filterValue, center} = this.state
     let filteredLocations = this.getFilteredLocations(filterValue)
       return (
