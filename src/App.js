@@ -18,7 +18,8 @@ class App extends Component {
       allLocations: [],
       selectedLocationId: '',
       filterValue: '',
-      center: this.defaultCenter
+      center: this.defaultCenter,
+      error: false
     }
   }
 
@@ -26,6 +27,10 @@ class App extends Component {
     LocationAPI.getLocations().then((locations) => {
       this.setState({
         allLocations:locations
+      })
+    }).catch( () => {
+        this.setState({
+        error: true
       })
     })
   }
@@ -45,15 +50,19 @@ class App extends Component {
     })
   })
 
-  render() {
-    let {selectedLocationId, filterValue, center} = this.state
-
+  getFilteredLocations = ((filterValue) => {
     let filteredLocations = this.state.allLocations
     if(filterValue){
       filteredLocations = this.state.allLocations.filter ((location) => {
         return location.venue.categories[0].id === filterValue
       })
     }
+    return filteredLocations
+  })
+
+  render() {
+    let {selectedLocationId, filterValue, center} = this.state
+    let filteredLocations = this.getFilteredLocations(filterValue)
 
     return (
       <div className="App">

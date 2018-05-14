@@ -4,7 +4,7 @@ export const torontoLng = -79.383184
 const client_id='4HQKBFUPS0MOXK1EOLLV3CYVIY4XDGU2WI0WCQAFCYI2UAWG'
 const client_secret='P1LFYYR2HIBCLZDRFQA52HIHHM4SILROLR5WX2RC2BW0OLPH'
 
-const venuesEndpoint = 'https://api.foursquare.com/v2/venues/explore'
+const venuesEndpoint = 'https://api.foursquare.com/v2/venues/explorer'
 const paramsForVenueRequest = {
 	ll: `${torontoLat},${torontoLng}`,
 	radius:'2000',
