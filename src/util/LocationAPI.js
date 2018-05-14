@@ -1,3 +1,5 @@
+//latitude/longitude of a central point in Toronto around which to find
+//and display location information
 export const torontoLat = 43.653226
 export const torontoLng = -79.383184
 
@@ -16,6 +18,8 @@ const paramsForVenueRequest = {
 	openNow:true
 }
 
+
+//get set of locations around a central point from Foursquare Venue service
 export const getLocations = () => {
 	const venuesRequestUrl = `${venuesEndpoint}?${buildQueryString(paramsForVenueRequest)}`
 
@@ -36,6 +40,7 @@ const paramsForDetailsRequest = {
 	v:'20180507'
 }
 
+//get detailed information for one location from Foursquare's venue details service
 export const getLocationDetails = (venueId) => {
 	let detailsRequestUrl = `${detailsEndpoint}/${venueId}`
 	detailsRequestUrl = `${detailsRequestUrl}?${buildQueryString(paramsForDetailsRequest)}`
@@ -46,7 +51,8 @@ export const getLocationDetails = (venueId) => {
     .catch(error => console.log(error))
 }
 
-
+//take an object with an arbitrary number of properties, and build a query string to
+//use in a URL request
 function buildQueryString(parameters){
   let qs = "";
   for(let key in parameters) {

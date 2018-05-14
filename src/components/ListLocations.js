@@ -13,6 +13,8 @@ class ListLocations extends Component {
 
 		let {locations, onSelectLocation, selectedLocationId} = this.props;
 
+		//if we don't have any location information, show "Loading...""
+		//message rather than a list
 		if(!locations || locations.length === 0){
 			return (
 				<section className="list">
@@ -20,7 +22,9 @@ class ListLocations extends Component {
 				        <span>Loading restaurant recommendations...</span>
 				    </div>
 			    </section>)
-		} else{
+		}
+		//we have locations, so show a list of all locations
+		else {
 			locations.sort()
 			return (
 				<section className="list" role="menu">
