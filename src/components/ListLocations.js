@@ -33,7 +33,7 @@ class ListLocations extends Component {
 			      </div>
 			      <ul className="locations">
 			      	{ locations.map((location) => (
-			      		<li tabindex="0" className={selectedLocationId === location.id ? 'selected' : ''} key={location.venue.id}><a onClick={ () => onSelectLocation(location)}>{location.venue.name}</a></li>
+			      		<li tabIndex="0" className={selectedLocationId === location.id ? 'selected' : ''} key={location.venue.id}><a onClick={ () => onSelectLocation(location)}>{location.venue.name}</a></li>
 			      	))}
 			      </ul>
 			    </section>
