@@ -64,8 +64,10 @@ select {
     font-family: 'Roboto', sans-serif;
     color: #808080;
     padding: 5px;
+    margin-bottom: 5px;
     width: 200px;
     border-radius: 5px;
+    border: solid #ff6a00;
 }
 
 option:focus, option:active{
