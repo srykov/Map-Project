@@ -1,11 +1,17 @@
-//latitude/longitude of a central point in Toronto around which to find
-//and display location information
+/*
+ * latitude/longitude of a central point in Toronto around which to find
+ * and display location information
+ */
 export const torontoLat = 43.653226
 export const torontoLng = -79.383184
+
 
 const client_id='4HQKBFUPS0MOXK1EOLLV3CYVIY4XDGU2WI0WCQAFCYI2UAWG'
 const client_secret='P1LFYYR2HIBCLZDRFQA52HIHHM4SILROLR5WX2RC2BW0OLPH'
 
+/*
+ * Constants for Foursquare Venue Recommendations Service Endpoint & Query Params
+ */
 const venuesEndpoint = 'https://api.foursquare.com/v2/venues/explore'
 const paramsForVenueRequest = {
 	ll: `${torontoLat},${torontoLng}`,
@@ -19,7 +25,10 @@ const paramsForVenueRequest = {
 }
 
 
-//get set of locations around a central point from Foursquare Venue service
+/*
+ * Get list of locations around a central point (lat/long) from Foursquare Venue
+ * Recommendation service. Return array of venues.
+ */
 export const getLocations = () => {
 	const venuesRequestUrl = `${venuesEndpoint}?${buildQueryString(paramsForVenueRequest)}`
 
@@ -33,6 +42,9 @@ export const getLocations = () => {
 }
 
 
+/*
+ * Constants for Foursquare Venue Details Service Endpoint & Query Params
+ */
 const detailsEndpoint = 'https://api.foursquare.com/v2/venues/'
 const paramsForDetailsRequest = {
 	client_id: client_id,
@@ -40,7 +52,10 @@ const paramsForDetailsRequest = {
 	v:'20180507'
 }
 
-//get detailed information for one location from Foursquare's venue details service
+/*
+ * Get detailed information for one location from Foursquare's venue details service.
+ * Return an object whose properties contain the venue's information.
+ */
 export const getLocationDetails = (venueId) => {
 	let detailsRequestUrl = `${detailsEndpoint}/${venueId}`
 	detailsRequestUrl = `${detailsRequestUrl}?${buildQueryString(paramsForDetailsRequest)}`
@@ -51,8 +66,10 @@ export const getLocationDetails = (venueId) => {
     .catch(error => console.log(error))
 }
 
-//take an object with an arbitrary number of properties, and build a query string to
-//use in a URL request
+/*
+ * buildQueryString() takes an object with an arbitrary number of properties,
+ * builds and returns a query string with these properties as query parameters.
+ */
 function buildQueryString(parameters){
   let qs = "";
   for(let key in parameters) {

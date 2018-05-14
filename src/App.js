@@ -36,7 +36,10 @@ class App extends Component {
   }
 
 
-  //capture the category id by which the user wants to filter the locations
+/*
+ * filterByType() - capture the category id by which the user wants to filter the
+ * locations
+ */
   filterByType = ((categoryId) => {
     this.setState({
       filterValue: categoryId,
@@ -44,7 +47,10 @@ class App extends Component {
     })
   })
 
-//capture the location id which the user wants to highlight on the map
+/*
+ * selectLocation() - capture the location id which the user wants to highlight
+ * on the map
+ */
   selectLocation = ((location) => {
     this.setState({
       selectedLocationId: location ? location.venue.id : '',
@@ -53,7 +59,10 @@ class App extends Component {
   })
 
 
-  //only return locations whose category matches the selected filter value
+/*
+ * getFilteredLocations() - only return locations whose category matches the
+ * selected filter value
+ */
   getFilteredLocations = ((filterValue) => {
     let filteredLocations = this.state.allLocations
     if(filterValue){

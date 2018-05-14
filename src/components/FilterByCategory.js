@@ -11,18 +11,24 @@ class FilterByCategory extends Component {
 
   render(){
 
-    let {locations, onFilterByCategory} = this.props;
+    let {locations, onFilterByCategory} = this.props
 
+    //if there are no locations, don't try to build the filter-by select box
     if(!locations || locations.length === 0){
       return (
         <div className="filter-by">
         </div>
       )
-    } else{
+    }
+    //we have locations, to build a select box that allows the user to filter by restaurant category
+    else{
       const allCategories = locations.map((location) =>
         location.venue.categories[0]
       )
 
+      /* put each category name in the select box only once, even if it is present for multiple
+       * restaurants
+       */
       const uniqueCategories = allCategories.filter((object, position, array) => {
         return array.map(category => category['id']).indexOf(object['id']) === position
       });
