@@ -22,7 +22,10 @@ export const getLocations = () => {
 	return fetch(venuesRequestUrl)
 	.then(response => response.json())
     .then(data => data.response.groups[0].items)
-    .catch(error => console.log(error))
+    .catch(error => {
+    	console.log(error)
+    	throw error
+    })
 }
 
 

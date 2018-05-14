@@ -61,22 +61,23 @@ class App extends Component {
   })
 
   render() {
+
     let {selectedLocationId, filterValue, center} = this.state
     let filteredLocations = this.getFilteredLocations(filterValue)
-
-    return (
-      <div className="App">
-        <div className="container">
-            <Header/>
-            <FilterByCategory onFilterByCategory={this.filterByType} locations={this.state.allLocations} filterValue={this.state.filterValue} selectedLocationId={selectedLocationId}/>
-            <ListLocations onSelectLocation={this.selectLocation} locations={filteredLocations} filterValue={this.state.filterValue} selectedLocationId={selectedLocationId}/>
-            <main role="main">
-              <Map onSelectLocation={this.selectLocation} locations={filteredLocations} center={center} zoom={this.defaultZoom} selectedLocationId={selectedLocationId}/>
-            </main>
-            <Footer/>
-          </div>
-      </div>
-    );
+      return (
+        <div className="App">
+          <div className="container">
+              <Header/>
+              <FilterByCategory onFilterByCategory={this.filterByType} locations={this.state.allLocations} filterValue={this.state.filterValue} selectedLocationId={selectedLocationId}/>
+              <ListLocations onSelectLocation={this.selectLocation} locations={filteredLocations} filterValue={this.state.filterValue} selectedLocationId={selectedLocationId}/>
+              <main role="main">
+                {this.state.error && <span className="error">We are currently not able to load location data from Foursquare.</span>}
+                <Map onSelectLocation={this.selectLocation} locations={filteredLocations} center={center} zoom={this.defaultZoom} selectedLocationId={selectedLocationId}/>
+              </main>
+              <Footer/>
+            </div>
+        </div>
+      )
   }
 }
 

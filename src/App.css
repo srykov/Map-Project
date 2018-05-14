@@ -126,7 +126,13 @@ option:focus, option:active{
 main{
     width: 100vw;
     margin: 10px;
-    background: #808080;
+    background: #ffffff;
+}
+
+.error {
+    font-family: 'Roboto-Condensed', sans-serif;
+    font-size: 20px;
+    color: #ff6a00;
 }
 
 #map {
